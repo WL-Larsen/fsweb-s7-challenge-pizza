@@ -1,0 +1,41 @@
+header {
+    padding: 2rem;
+    background: #C20608;
+}
+
+
+header nav {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-bottom: -36px;
+}
+
+header nav a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 0.2rem 0.5rem;
+    min-width: 1rem;
+    font-family: Barlow;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: left;
+    font-weight: 200;
+
+}
+
+header nav a:active {
+  font-weight: bold;
+  }
+
+input {
+  margin-bottom: 1rem;
+  border-radius: 10rem;
+  padding: 0.1rem 1rem;
+}
+  
+  .menuTick {
+    color: white;
+  }
