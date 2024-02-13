@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from '../layouts/Header.jsx'
-import { Card, Form, FormGroup, Input, Label } from "reactstrap";
+import { Card, Form, FormGroup, Input, Label, Button } from "reactstrap";
 import PizzaOrder from "./PizzaOrder.jsx";
+import { Link } from "react-router-dom";
 
 const initialForm = {
     boyutSec: '',
@@ -27,12 +28,44 @@ function Order(props){
     const selectionPrice = 5;
 
 
-    function handleSubmit(){
-        return
+    useEffect(()=> {
+        settotalPrice(selections.length * selectionPrice + count * 85.50 );
+    },[selections, count])
+
+    function handleChange(e){
+        let {name, value} = e.target;
+        setFormData(f =>({...f,[name]: value}));
     }
 
-    function handleChange(){
-        return
+    function handleSubmit(e){
+        e.preventDefault();
+        if(selections[0].length <4){
+            <p>En az 4 malzeme seçmelisiniz.</p>
+            return;
+        }
+        if(count < 1 ){
+            alert('Pizza adedi en az 1 olmalıdır.')
+            return;
+        }
+        if (formData.boyutSec  == '') {
+            alert('Pizza boyutu seçmelisiniz.');
+            return;
+        }
+    }
+
+    /* const formData2 = { ...formData, count, availableToppings: selections };axios
+      .post('https://reqres.in/api/users', formData2)
+      .then((res) => props.setCurrentOrder(res.data))
+      .catch((err) => console.warn(err));
+    //3.1.3. formu sıfırla -Yöntem 2: controlled
+    setFormData(initialForm);
+    history.push(`/SiparisOnay`);
+    console.log(formData2);
+    } */
+
+    function setOrder(e, i) {
+        e.preventDefault();
+        setCount((count) => count + i);
     }
 
 
@@ -99,18 +132,53 @@ function Order(props){
                         </Input>
                     </FormGroup>
                 </div>
+
                 <FormGroup>
                  <h2>Ek Malzemeler</h2>
                  <p>En Fazla 10 malzeme seçebilirsiniz. Her seçim 5₺ </p>
                  <PizzaOrder selections={selections} setSelections={setSelections}/>
-            {selections.length < 4 && <p>En az 4 malzeme seçmelisiniz.</p>}
-  {selections.length > 10 && <p>En fazla 10 malzeme seçebilirsiniz. Her seçim 5₺</p>}
-          </FormGroup>
-          <br /><br />
+                  {selections.length < 4 && <p>En az 4 malzeme seçmelisiniz.</p>}
+                  {selections.length > 10 && <p>En fazla 10 malzeme seçebilirsiniz. Her seçim 5₺</p>}
+                </FormGroup>
+                <br /><br />
+
+                <FormGroup className="borderSiparis">
+                 <Label for="siparisNotu">Sipariş Notu</Label><br />
+                 <Input
+                   id="siparisNotu"
+                   name="siparisNotu"
+                   placeholder="Siparişine eklemek istediğin bir not var mı?"
+                   type="textarea"
+                   value={formData.siparisNotu}
+                   onChange={handleChange}
+                 />
+                </FormGroup>
+
+                {count < 1 && <p>Pizza Adedi Giriniz.</p>}
+                <div className="order-confirm">
+                <div className="complex-buttons">
+                    <button onClick={(e)=>setOrder(e, -1)}>-</button>
+                    <button disabled>{count}</button>
+                    <button onClick={(e)=>setOrder(e, 1)}>+</button>
+                </div>
+                <div className="order-summary">
+                <div className="summary-card">
+                    <h3>Sipariş Toplamı</h3>
+                    <div className="value-group">
+                     <div className="tag">Seçimler</div>
+                     <div className="value">{selections.length * selectionPrice}</div>
+                    </div>
+                    <div className="value-group">
+                     <div className="tag">Toplam</div>
+                     <div className="value">{totalPrice}</div>
+                    </div>
+                </div>
+                <Link to='/orderConfirmation'><button >SİPARİŞ VER</button></Link>
+                </div>
+                </div>
              </Form>
             </Card>
         </div>
-
     </div>
     </>)
 }
