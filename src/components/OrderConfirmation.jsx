@@ -8,8 +8,8 @@ font-size: 86px;
 font-weight: 300;
 line-height: 92px;
 letter-spacing: 1.5px;
-text-align: center;
-
+text-align: center !important;
+padding: 100px !important;
 `;
 
 

@@ -11,7 +11,7 @@ header nav {
   margin-bottom: -36px;
 }
 
-header nav a {
+ header nav a {
     color: rgb(255, 255, 255);
     text-decoration: none;
     padding: 0.2rem 0.5rem;
@@ -23,12 +23,12 @@ header nav a {
     letter-spacing: 0em;
     text-align: left;
     font-weight: 200;
-
+ 
 }
 
-header nav a:active {
+ header nav a:active {
   font-weight: bold;
-  }
+  } 
 
 input {
   margin-bottom: 1rem;
