@@ -3,6 +3,7 @@ import Header from '../layouts/Header.jsx'
 import { Card, Form, FormGroup, Input, Label, Button } from "reactstrap";
 import PizzaOrder from "./PizzaOrder.jsx";
 import { Link } from "react-router-dom";
+import './Order.css';
 
 const initialForm = {
     boyutSec: '',
@@ -70,17 +71,16 @@ function Order(props){
 
 
     return (<>
-    <div> 
-        <Header />
+    <div>
+    <Header /> 
         <div className="container">
+        
             <Card>
             <h2>Positon Absolute Acılı Pizza</h2>
              <h3>
-                 <ul>
-                 <li>85.50₺</li>
-                 <li>4.9</li>
-                 <li>(200)</li>
-                 </ul>
+                 <p>85.50₺</p>
+                 <p className="Bb">4.9</p>
+                 <p className="Bb">(200)</p> 
              </h3>
              <p className='pizzaInfo'>Frontent Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan kökenli lezzetli bir yemektir. . Küçük bir pizzaya bazen pizzetta denir.</p>
              <Form onSubmit={handleSubmit}>
@@ -117,7 +117,7 @@ function Order(props){
                         <br />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="hamurSec">Hamur Seç *</Label><br />
+                        <Label className='hamurSec' for="hamurSec">Hamur Seç *</Label><br />
                         {formData.hamurSec == '' && <p>Pizza hamurunu seçmelisiniz.</p>}
                         <Input
                         id="hamurSec"
@@ -133,7 +133,7 @@ function Order(props){
                     </FormGroup>
                 </div>
 
-                <FormGroup>
+                <FormGroup className="ekMalzeme">
                  <h2>Ek Malzemeler</h2>
                  <p>En Fazla 10 malzeme seçebilirsiniz. Her seçim 5₺ </p>
                  <PizzaOrder selections={selections} setSelections={setSelections}/>
@@ -153,12 +153,13 @@ function Order(props){
                    onChange={handleChange}
                  />
                 </FormGroup>
+                <div className="line"></div>
 
                 {count < 1 && <p>Pizza Adedi Giriniz.</p>}
                 <div className="order-confirm">
                 <div className="complex-buttons">
                     <button onClick={(e)=>setOrder(e, -1)}>-</button>
-                    <button disabled>{count}</button>
+                    <button className="count" disabled>{count}</button>
                     <button onClick={(e)=>setOrder(e, 1)}>+</button>
                 </div>
                 <div className="order-summary">

@@ -1,0 +1,177 @@
+.container{
+    display: flex;
+    align-items: center;
+    padding-left: 25%;
+}
+
+.container h2{
+    width: 470.36px;
+    height: 56px;
+    top: 221.8px;
+    left: 695px;
+    font-family: Barlow;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.container h3{
+    width: 574.43px;
+    height: 37px;
+    top: 306.02px;
+    left: 695px;
+    display: flex;
+
+}
+
+.container h3:first-child{
+    font-family: Barlow;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 37px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+
+.Bb{
+    font-family: Barlow;
+font-size: 16px;
+font-weight: 400;
+line-height: 29px;
+letter-spacing: 0em;
+text-align: right;
+color: #5F5F5F;
+}
+
+.pizzaInfo{
+width: 581px;
+gap: 10px;
+font-family: Barlow;
+font-size: 16px;
+font-weight: 400;
+line-height: 29px;
+letter-spacing: 0em;
+text-align: left;
+color: #5F5F5F;
+}
+.pizzaSize{
+    display: flex;
+    gap:150px;
+    padding: 25px;
+}
+
+.pizzaSize p{
+    font-family: Barlow;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: left;
+    
+}
+
+.hamurSec{
+font-family: Barlow;
+font-size: 20px;
+font-weight: 600;
+line-height: 25px;
+letter-spacing: 0em;
+text-align: left;
+padding-bottom: 45px;;
+}
+
+.ekMalzeme ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 500px;
+    height: 182px;
+} 
+
+.ekMalzeme li {
+    display: flex; 
+    padding: 15px;
+}
+
+.ekMalzeme p{
+    display: flex;
+    justify-content:flex-start;
+}
+
+
+.borderSiparis label{
+    width: 146px;
+    height: 25px;
+    top: 1160.38px;
+    left: 695px;
+    font-family: Barlow;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: left;
+    display: flex;
+    justify-content:flex-start;
+}
+
+.borderSiparis textarea{
+    display: flex;
+width: 590px;
+height: 56px;
+top: 1205px;
+left: 695px;
+padding: 5px, 213px, 4px, 20px;
+border-radius: 6px;
+border: 1px solid #D9D9D9;
+justify-content:flex-start;
+
+}
+
+.line{
+    width: 581px;
+    top: 1295px;
+    left: 695px;
+    border: 6px, 0px solid #5F5F5F80;
+    padding: 25px;
+}
+
+.order-confirm{
+    display: flex;
+    flex-direction: row;
+
+}
+.complex-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    margin: 25px;
+}
+.complex-buttons button{
+    width: 47px;
+    height: 56px;
+    top: 1333.91px;
+    left: 695px;
+    padding: 11.59px, 0px, 17.41px, 0px;
+    border-radius: 5px;
+}
+
+.order-summary{
+    width: 386px;
+    height: 197px;
+    top: 1333px;
+    left: 899.41px;
+    border-radius: 6px;
+    border: 1px;
+    border: 1px solid #D9D9D9;
+    margin: 25px;
+    margin-left: 75px;
+}
+
+.count{
+    background-color: #D9D9D9;
+    border-radius: 0.5px;
+
+}

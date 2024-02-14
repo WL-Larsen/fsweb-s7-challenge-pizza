@@ -1,7 +1,18 @@
 header {
     padding: 2rem;
-    background: #C20608;
+    background: #C20608; 
+    /* width: 1920px;
+    height: 207px;
+    padding: 66.49px, 0px, 94.72px, 0px;
+    border: 0px, 0px, 1px, 0px solid #C20607;
+    background: #C20608; */
 }
+
+header img{
+  display: flex !important;
+  align-content: center;
+}
+
 
 
 header nav {
@@ -39,3 +50,4 @@ input {
   .menuTick {
     color: white;
   }
+  

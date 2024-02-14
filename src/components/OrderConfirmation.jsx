@@ -16,7 +16,7 @@ padding: 100px !important;
 function OrderConfirmation(props){
     return(
     <div className="siparisOnay">
-        <img src={logo} className="home-logo" />
+        <div className='logo-onay'><img src={logo} className="home-logo" /></div>
         <Text className='home-title-h2'>TEBRİKLER! <br />SİPARİŞİNİZ ALINDI!</Text>
     </div>
     )
