@@ -4,6 +4,7 @@ import { Card, Form, FormGroup, Input, Label, Button } from "reactstrap";
 import PizzaOrder from "./PizzaOrder.jsx";
 import { Link } from "react-router-dom";
 import './Order.css';
+import axios from "axios";
 
 const initialForm = {
     boyutSec: '',
@@ -26,6 +27,7 @@ function Order(props){
     const [totalPrice, settotalPrice] = useState(0);
     const [count, setCount] = useState(0)
     const [selections, setSelections] = useState([])
+    /* const [isValid, setIsValid] = useState(false); */
     const selectionPrice = 5;
 
 
@@ -54,21 +56,38 @@ function Order(props){
         }
     }
 
-    /* const formData2 = { ...formData, count, availableToppings: selections };axios
-      .post('https://reqres.in/api/users', formData2)
-      .then((res) => props.setCurrentOrder(res.data))
-      .catch((err) => console.warn(err));
+const formData2 = { ...formData, count, 
+    availableToppings: selections };
+
+useEffect(() => {
+    axios.get('https://reqres.in/api/users')
+            .then(response => {
+            setUsers(response.data.data); 
+          })
+          .catch(error => {
+            console.error('API isteği başarısız: ', error);
+          });
+      }, []);
+ /*    axios
+    .post('https://reqres.in/api/users', formData2)
+    .then((res) => props.setCurrentOrder(res.data))
+    .catch((err) => console.warn(err));
     //3.1.3. formu sıfırla -Yöntem 2: controlled
-    setFormData(initialForm);
+    /* setFormData(initialForm);
     history.push(`/SiparisOnay`);
     console.log(formData2);
-    } */
+     */ 
 
     function setOrder(e, i) {
         e.preventDefault();
         setCount((count) => count + i);
     }
 
+/* useEffect(()=>{
+    const values = Object.values(formData);
+
+},[Form])
+ */
 
     return (<>
     <div>
@@ -155,7 +174,7 @@ function Order(props){
                 </FormGroup>
                 <div className="line"></div>
 
-                {count < 1 && <p>Pizza Adedi Giriniz.</p>}
+                {count < 1 && <p className="adet">Pizza Adedi Giriniz.</p>}
                 <div className="order-confirm">
                 <div className="complex-buttons">
                     <button onClick={(e)=>setOrder(e, -1)}>-</button>
@@ -174,14 +193,15 @@ function Order(props){
                      <div className="value">{totalPrice}</div>
                     </div>
                 </div>
-                <Link to='/orderConfirmation'><button >SİPARİŞ VER</button></Link>
+               <Link to='/orderConfirmation'><button /* disabled={!isValid} */>SİPARİŞ VER</button></Link>
+                
                 </div>
                 </div>
              </Form>
             </Card>
         </div>
     </div>
-    </>)
-}
+    </>)}
+
 
 export default Order;
