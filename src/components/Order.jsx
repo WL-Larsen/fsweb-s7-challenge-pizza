@@ -193,7 +193,7 @@ useEffect(() => {
                      <div className="value">{totalPrice}</div>
                     </div>
                 </div>
-               <Link to='/orderConfirmation'><button /* disabled={!isValid} */>SİPARİŞ VER</button></Link>
+               <Link to='/orderConfirmation'><button data-cy='order-button' /* disabled={!isValid} */>SİPARİŞ VER</button></Link>
                 
                 </div>
                 </div>
