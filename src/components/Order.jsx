@@ -99,14 +99,15 @@ useEffect(() => {
              <h3>
                  <p>85.50₺</p>
                  <p className="Bb">4.9</p>
-                 <p className="Bb">(200)</p> 
+                 <p className="Bc">(200)</p> 
              </h3>
              <p className='pizzaInfo'>Frontent Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan kökenli lezzetli bir yemektir. . Küçük bir pizzaya bazen pizzetta denir.</p>
              <Form onSubmit={handleSubmit}>
                 <div className="pizzaSize">
                     <FormGroup>
-                        <p>Boyut Seç *</p>
-                        {formData.boyutSec == '' && <p>Pizza boyutunu seçmelisiniz.</p>}
+                        <p className="boyutSec">Boyut Seç *</p>
+                        {formData.boyutSec == '' && <p className="hata">Pizza boyutunu seçmelisiniz.</p>}
+                        <div>
                         <Input
                         id="kucukBoy"
                         name="boyutSec"
@@ -134,10 +135,11 @@ useEffect(() => {
                         />
                         <Label for="boyutSec">Büyük</Label>
                         <br />
+                        </div>
                     </FormGroup>
                     <FormGroup>
                         <Label className='hamurSec' for="hamurSec">Hamur Seç *</Label><br />
-                        {formData.hamurSec == '' && <p>Pizza hamurunu seçmelisiniz.</p>}
+                        {formData.hamurSec == '' && <p className="hata">Pizza hamurunu seçmelisiniz.</p>}
                         <Input
                         id="hamurSec"
                         name="hamurSec"
@@ -156,8 +158,8 @@ useEffect(() => {
                  <h2>Ek Malzemeler</h2>
                  <p>En Fazla 10 malzeme seçebilirsiniz. Her seçim 5₺ </p>
                  <PizzaOrder selections={selections} setSelections={setSelections}/>
-                  {selections.length < 4 && <p>En az 4 malzeme seçmelisiniz.</p>}
-                  {selections.length > 10 && <p>En fazla 10 malzeme seçebilirsiniz. Her seçim 5₺</p>}
+                  {selections.length < 4 && <p className="hata">En az 4 malzeme seçmelisiniz.</p>}
+                  {selections.length > 10 && <p className="hata">En fazla 10 malzeme seçebilirsiniz. Her seçim 5₺</p>}
                 </FormGroup>
                 <br /><br />
 
