@@ -1,4 +1,6 @@
 header {
+  display: flex;
+
     padding: 2rem;
     background: #C20608; 
     /* width: 1920px;
@@ -17,9 +19,9 @@ header img{
 
 header nav {
   display: flex;
-  justify-content: left;
+  justify-content: center;
   align-items: center;
-  margin-bottom: -36px;
+  
 }
 
  header nav a {
@@ -50,4 +52,15 @@ input {
   .menuTick {
     color: white;
   }
-  
+  .container{
+  display: flex;
+  align-items: center;
+  padding-left: 25%;
+  flex-direction: column;
+  }
+
+  .container nav{
+    display: flex;
+    justify-content: flex-start;
+    width: 700px; 
+  }

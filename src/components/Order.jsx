@@ -187,15 +187,17 @@ useEffect(() => {
                 <div className="summary-card">
                     <h3>Sipariş Toplamı</h3>
                     <div className="value-group">
+                    <div >
                      <div className="tag">Seçimler</div>
-                     <div className="value">{selections.length * selectionPrice}</div>
+                     <div className="value-b">{selections.length * selectionPrice}</div>
                     </div>
-                    <div className="value-group">
+                    <div >
                      <div className="tag">Toplam</div>
-                     <div className="value">{totalPrice}</div>
+                     <div className="value-b">{totalPrice}</div>
+                    </div>
                     </div>
                 </div>
-               <Link to='/orderConfirmation'><button data-cy='order-button' /* disabled={!isValid} */>SİPARİŞ VER</button></Link>
+               <Link to='/orderConfirmation'><button data-cy='order-button' className="siparis-ver" /* disabled={!isValid} */>SİPARİŞ VER</button></Link>
                 
                 </div>
                 </div>
