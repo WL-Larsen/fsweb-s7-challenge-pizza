@@ -1,0 +1,36 @@
+.quattrocento-sans-regular {
+    font-family: "Quattrocento Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+
+
+
+.Lezzetus{
+    background-image: url('../assets/kart-1.png');
+    background-size:cover ;
+    width: 450px;
+    height: 300px;
+    border-radius: 12px;
+} 
+
+
+.Hackathlon{
+    background-image: url('../assets/kart-2.png');
+    background-size:cover ;
+    width: 400px;
+    height: 160px;
+    border-radius: 12px;
+} 
+
+.Kurye{
+    background-image: url('../assets/kart-3.png');
+    background-size:cover ;
+    width: 400px;
+    height: 160px;
+    border-radius: 12px;
+} 
+
+
+
